@@ -4,6 +4,23 @@
 
 ---
 
+## 画像の参照方法
+画像は、記事の本文や、本のチャプターの本文から参照することができます。参照するには、画像埋め込み記法の URL 部分に /images/ から始まる絶対パスを指定します。相対パスで指定しないようご注意ください。
+
+```
+# 正しい指定方法
+
+![](/images/example-image1.png)
+![](/images/example-article-1/image1.png)
+
+# 誤った指定方法
+
+![](../images/example-image1.png)
+![](//images/example-image1.png)
+```
+
+---
+
 ## 見出し
 
 ```
