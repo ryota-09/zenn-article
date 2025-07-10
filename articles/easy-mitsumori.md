@@ -1,5 +1,5 @@
 ---
-title: "Claude CodeとAWS Pricing MCP Server(旧: AWS Cost Analytics MCP)で実現する簡易インフラコスト見積もり" # 記事のタイトル
+title: "ClaudeCodeとAWSPricing(旧:CostAnalytics)MCPサーバーで実現する簡易インフラコスト見積もり" # 記事のタイトル
 emoji: "💰" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["aws", "terraform", "claude", "cost", "infrastructure"] # タグ。["react", "nextjs", "typescript"]のように指定する
