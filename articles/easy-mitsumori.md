@@ -1,25 +1,30 @@
 ---
-title: "Claude CodeとAWS Cost Analytics MCPで実現する簡易インフラコスト見積もり" # 記事のタイトル
+title: "Claude CodeとAWS Pricing MCP Server(旧: AWS Cost Analytics MCP)で実現する簡易インフラコスト見積もり" # 記事のタイトル
 emoji: "💰" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["aws", "terraform", "claude", "cost", "infrastructure"] # タグ。["react", "nextjs", "typescript"]のように指定する
 published: true # 公開設定（falseにすると下書き）
 ---
 
+:::message
+**重要な更新**
+AWS Cost Analytics MCPサーバーは **AWS Pricing MCP Server** に置き換えられました。この記事では新しいサーバーの情報に基づいて更新済みです。
+:::
+
 ## はじめに
 
 こんにちは！[@ryota_09](https://x.com/Ryo54388667)です！☺️
 普段は都内でフロントエンドエンジニアとして業務をしてます！
 
-今回は **Claude CodeとAWS Cost Analytics MCPサーバーを活用してインフラのコストを簡易的に見積もる方法** を紹介していきます！
+今回は **Claude CodeとAWS Pricing MCP Serverを活用してインフラのコストを簡易的に見積もる方法** を紹介していきます！
 本来はAWS Pricing Calculatorを使って手動で見積もりを行う必要がありますが、パパッと見積もりを出さないといけないケースや概算でのコスト感を把握したいケースに便利な方法です！
 
-## AWS Cost Analytics MCPについて
+## AWS Pricing MCP Serverについて
 
-AWS Cost Analytics MCPサーバーは、以下の機能があります！
+AWS Pricing MCP Serverは、以下の機能があります！
 
 1. **Terraform解析**：`analyze_terraform_project`ツールでTerraformコードからAWSリソースを抽出
-2. **価格情報取得**：`get_pricing_from_api`ツールでAWS Price List APIから最新の価格情報を取得
+2. **価格情報取得**：`get_pricing`ツールでAWS Price List APIから最新の価格情報を取得
 3. **レポート生成**：`generate_cost_report`ツールで見積もりレポートを生成
 
 ## 方法
@@ -27,7 +32,7 @@ AWS Cost Analytics MCPサーバーは、以下の機能があります！
 :::message
 **前提条件**
 - コード実行できるAWS Profileが設定されていること
-- AWS MCPサーバーがセットアップされていること ([手順はこちらを参照](https://github.com/awslabs/mcp?tab=readme-ov-file#installation-and-setup))
+- AWS Pricing MCP Serverがセットアップされていること ([手順はこちらを参照](https://awslabs.github.io/mcp/#installation-and-setup))
 - claude codeが利用可能であること
 :::
 
@@ -39,19 +44,19 @@ AWS Cost Analytics MCPサーバーは、以下の機能があります！
 ```mermaid
 graph LR
     A[Claude Code] --> B[Terraformコード]
-    B --> C[AWS Cost Analytics MCP]
+    B --> C[AWS Pricing MCP Server]
     C --> D[コスト見積もり]
     D --> E[Markdownドキュメント]
 ```
 
 
 1. **Claude CodeでTerraformコード作成**：プロンプトをもとにTerraformでインフラのコードを生成
-2. **MCP経由で見積もり**：AWS Cost Analytics MCPサーバーでコスト計算
+2. **MCP経由で見積もり**：AWS Pricing MCP Serverでコスト計算
 3. **ドキュメント生成**：見積もり結果をMarkdown形式で出力
 
-今回はterraformのソースではなく、マークダウンの仕様書で見積もりができないかなと考えたのですが、AWS Cost Analytics MCPサーバーはterraformのコードかCDKのコードを解析してコスト見積もりを行うため、マークダウンの仕様書ではなく、前段でTerraformコードを書いています。TerraformかCDKのコードかはどちらでもOKです！🙆‍♂️自分はTerraformのコードをよく書いているので、Terraformのコードを例にしています。
+今回はterraformのソースではなく、マークダウンの仕様書で見積もりができないかなと考えたのですが、AWS Pricing MCP ServerはterraformのコードかCDKのコードを解析してコスト見積もりを行うため、マークダウンの仕様書ではなく、前段でTerraformコードを書いています。TerraformかCDKのコードかはどちらでもOKです！🙆‍♂️自分はTerraformのコードをよく書いているので、Terraformのコードを例にしています。
 
-https://awslabs.github.io/mcp/#cost-analysis-mcp-server
+https://awslabs.github.io/mcp/#aws-pricing-mcp-server
 
 プロジェクトのディレクトリ構造は以下のようにします
 
@@ -76,7 +81,7 @@ https://awslabs.github.io/mcp/#cost-analysis-mcp-server
 
 ## todoリスト
 1. `project`ディレクトリにTerraformコードを生成する。フロントエンド、バックエンドのインフラ構成を含む。zip化等のコマンドは不要です。あくまでterrafomのファイルのみでOK。
-2. AWS Cost Analysis MCPサーバーでterraformのコードを分析し月額コストを見積もりを行う。configディレクトリも参考にすること。
+2. AWS Pricing MCP Serverでterraformのコードを分析し月額コストを見積もりを行う。configディレクトリも参考にすること。
 3. `docs`ディレクトリに月額コストの見積もり結果をMarkdownファイルとして作成する。必ずサマリーを冒頭にテーブルで記載すること。価格の根拠となるURLも記載すること。
 
 ## プロジェクト条件
