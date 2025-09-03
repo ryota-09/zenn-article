@@ -26,7 +26,7 @@ Claude Codeには標準でWebSearchとWebFetchツールが標準で用意され�
 - CodexのWebToolが利用可能な状態であること。
 :::
 
-**結論と概要**
+### 結論と概要
 
 Claude Code hooksを利用して、WebSearchとWebFetchツールの利用を検知した際に、codexコマンドを実行するスクリプトを呼び出すようにします。
 
