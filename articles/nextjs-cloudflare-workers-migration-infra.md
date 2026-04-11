@@ -237,8 +237,8 @@ required_providers {
 dig NS ryotablog.jp +short
 
 # 期待する結果:
-# gabriella.ns.cloudflare.com.
-# yevgen.ns.cloudflare.com.
+# <ns1>.ns.cloudflare.com.
+# <ns2>.ns.cloudflare.com.
 ```
 
 伝播には通常数分〜数時間、最大48時間かかります。伝播完了までAWSインフラはそのまま稼働し続けるため、**ダウンタイムはゼロ**です🎉
