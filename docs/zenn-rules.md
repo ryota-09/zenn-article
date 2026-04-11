@@ -305,5 +305,24 @@ graph TB
 
 ⸻
 
+## 記事の本番URL
+
+Zennの記事URLは以下の形式になります。
+
+```
+https://zenn.dev/{ユーザー名}/articles/{スラッグ}
+```
+
+- **ユーザー名**: Zennアカウントのユーザー名（このリポジトリでは `ryota_09`）
+- **スラッグ**: 記事のmdファイル名（拡張子なし）
+
+例: `articles/nextjs-cloudflare-workers-migration-app.md` の場合
+
+```
+https://zenn.dev/ryota_09/articles/nextjs-cloudflare-workers-migration-app
+```
+
+⸻
+
 （以上）
 

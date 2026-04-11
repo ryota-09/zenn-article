@@ -6,7 +6,7 @@ topics: ["terraform", "cloudflare", "aws", "infrastructure", "dns"]
 published: true
 ---
 
-:::message alert
+:::message
 この記事はAIとの共著です。
 :::
 
@@ -14,7 +14,7 @@ published: true
 
 普段は都内でエンジニアとして業務をしてます！主にTypeScriptやNext.jsといった技術を触っています。
 
-前回の[アプリケーション編](https://zenn.dev/ryota_and/articles/nextjs-cloudflare-workers-migration-app)ではアプリ側の修正を解説しました。本記事では**Terraformによるインフラ構成の変更**、**Cloudflareアカウントのセットアップ**、**DNS移行**にフォーカスしていきます！
+前回の[アプリケーション編](https://zenn.dev/ryota_09/articles/nextjs-cloudflare-workers-migration-app)ではアプリ側の修正を解説しました。本記事では**Terraformによるインフラ構成の変更**、**Cloudflareアカウントのセットアップ**、**DNS移行**にフォーカスしていきます！
 
 ## 📌 移行前後のインフラ構成
 
