@@ -3,8 +3,12 @@ title: "Next.jsブログをAWS App RunnerからCloudflare Workersへ移行した
 emoji: "🏗️"
 type: "tech"
 topics: ["terraform", "cloudflare", "aws", "infrastructure", "dns"]
-published: false
+published: true
 ---
+
+:::message alert
+この記事はAIとの共著です。
+:::
 
 こんにちは！[@Ryo54388667](https://x.com/Ryo54388667)です！☺️
 
