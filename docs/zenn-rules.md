@@ -324,5 +324,12 @@ https://zenn.dev/ryota_09/articles/nextjs-cloudflare-workers-migration-app
 
 ⸻
 
-（以上）
+## 秘匿すべき情報の扱い
+idやパスワードなど秘匿すべき情報を記事に絶対に載せないこと。その際はプレースホルダーを使うことを推奨します。
+(例)
+```
+ユーザー名: {ユーザー名}
+パスワード: {パスワード}
 
+/images/<user_id>/example.png
+```

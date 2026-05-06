@@ -472,7 +472,7 @@ export default function SearchPage() {
 調べたところ、`articles`テーブルの`embedding`カラムがnullだったのが原因でした。
 embeddingの登録が必要です。`update-embeddings.ts`スクリプトを実行してください！
 
-**確認クエリ：**
+**確認クエリ**
 ```sql
 SELECT id, title,
        embedding IS NOT NULL as has_embedding,
