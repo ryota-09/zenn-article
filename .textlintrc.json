@@ -1,0 +1,34 @@
+{
+  "filters": {
+    "comments": true
+  },
+  "rules": {
+    "preset-ja-technical-writing": {
+      "sentence-length": { "max": 120 },
+      "no-exclamation-question-mark": {
+        "allowFullWidthExclamation": true,
+        "allowFullWidthQuestion": true
+      },
+      "ja-no-mixed-period": false,
+      "ja-no-weak-phrase": false,
+      "no-doubled-joshi": false,
+      "ja-no-successive-word": false,
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "ですます",
+        "preferInList": ""
+      }
+    },
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": false,
+      "ja-space-around-code": false
+    },
+    "@textlint-ja/preset-ai-writing": {
+      "no-ai-list-formatting": false,
+      "no-ai-emphasis-patterns": false
+    },
+    "prh": {
+      "rulePaths": ["./prh.yml"]
+    }
+  }
+}

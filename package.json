@@ -4,12 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "zenn preview",
+    "lint": "textlint articles/",
+    "lint:fix": "textlint --fix articles/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "zenn-cli": "^0.2.1"
+  },
+  "devDependencies": {
+    "@textlint-ja/textlint-rule-preset-ai-writing": "^1.0.0",
+    "textlint": "^14.0.0",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^9.0.0",
+    "textlint-rule-prh": "^6.0.0",
+    "yaml": "^2.5.0"
   }
 }

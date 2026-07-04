@@ -1,0 +1,32 @@
+version: 1
+rules:
+  # 固有名詞の公式表記
+  - expected: JavaScript
+    patterns: [Javascript]
+  - expected: TypeScript
+    patterns: [Typescript]
+  - expected: GitHub
+    patterns: [Github]
+  - expected: GitHub Actions
+    patterns: [Github Actions, GitHub actions]
+  - expected: Next.js
+    patterns: [NextJS, Nextjs]
+  - expected: Node.js
+    patterns: [NodeJS, Nodejs]
+  - expected: macOS
+    patterns: [MacOS, Mac OS X, OSX]
+  - expected: VS Code
+    patterns: [VSCode]
+  - expected: Claude Code
+    patterns: [claude code, ClaudeCode]
+  # ひらがな推奨(補助動詞)
+  - expected: ください
+    patterns: [下さい]
+  - expected: いただく
+    patterns: [頂く]
+  # 長音表記統一(articles/+contents/の既存記事で多数派を集計して決定: サーバー10件/サーバ1件、ユーザー25件/ユーザ2件)
+  # ※「ユーザビリティ」は長音を付けないのが標準表記の複合語のため除外
+  - expected: サーバー
+    patterns: ["/サーバ(?!ー)/"]
+  - expected: ユーザー
+    patterns: ["/ユーザ(?!ー|ビリティ)/"]
