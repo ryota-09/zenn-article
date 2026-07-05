@@ -74,7 +74,7 @@ Books are organized in subdirectories under `books/`. Each book directory contai
 
 - 新規記事の執筆: `/write-article`(調査→構成→執筆→セルフチェック)
 - 公開前の総合レビュー: `/review-article`(textlint+文体+剽窃+ファクトチェックを一括)
-- 個別チェック: `/style-check`(文体) / `/plagiarism-check`(剽窃)
+- 個別チェック: `/style-check`(文体) / `/plagiarism-check`(剽窃) / `/security-check`(秘匿情報。git履歴・画像も含む)
 - 文体・Zenn記法・雛形の正データは `docs/write-style.md` / `docs/zenn-rules.md` / `docs/template.md`(本ファイルに複製しない)
 - `articles/*.md` 編集後に秘匿情報スキャンとfrontmatter検証が自動実行される(`.claude/scripts/`)
 - まとめ等で✅絵文字は使わない。AI共著記事は冒頭に `:::message この記事はAIとの共著です。 :::`

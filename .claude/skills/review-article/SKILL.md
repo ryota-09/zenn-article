@@ -16,9 +16,11 @@ argument-hint: "[記事ファイルパス]"
 
 ```
 node .claude/scripts/check-frontmatter.mjs <file>
-node .claude/scripts/scan-secrets.mjs <file>
+node .claude/skills/security-check/scripts/security-scan.mjs <file>
 npx textlint <file>
 ```
+
+秘匿情報スキャンは security-check スキルのドライバを使う(hook用の `scan-secrets.mjs` より広いルール+git履歴+画像列挙を含む)。`[HISTORY]` 検出や画像の目視確認まで踏み込む場合は `/security-check` を案内する。
 
 textlintの指摘のうち、`Disallow to use "!"` が画像記法(`![](url =幅x)` のようなリサイズ指定付き)の行から出ている場合は、Zenn独自の画像幅指定構文をtextlintのMarkdownパーサーが認識できないことによる既知の誤検知なので無視してよい。
 
