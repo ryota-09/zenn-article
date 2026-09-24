@@ -16,6 +16,10 @@ published: true
 
 前回の[アプリケーション編](https://zenn.dev/ryota_09/articles/nextjs-cloudflare-workers-migration-app)ではアプリ側の修正を解説しました。本記事では**Terraformによるインフラ構成の変更**、**Cloudflareアカウントのセットアップ**、**DNS移行**にフォーカスしていきます！
 
+**2026/09/25 スライド追加**
+
+@[speakerdeck](b93df649fb4045a5ab9019e5c914a182)
+
 ## 📌 移行前後のインフラ構成
 
 ### 移行前（AWS）

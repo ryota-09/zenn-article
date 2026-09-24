@@ -16,6 +16,10 @@ published: true
 
 今回は **個人ブログ（Next.js 16 + microCMS）をAWS App RunnerからCloudflare Workersへ移行した話** を紹介していきます！本記事では**アプリケーション側の修正**にフォーカスし、移行で直面した問題と解決策を共有します。インフラ編は[こちら](https://zenn.dev/ryota_09/articles/nextjs-cloudflare-workers-migration-infra)です。
 
+**2026/09/25 スライド追加**
+
+@[speakerdeck](b93df649fb4045a5ab9019e5c914a182)
+
 ## 📌 移行の背景
 
 AWSから**App Runnerへの新機能追加の終了**がアナウンスされました。**2026年4月30日**以降は新規顧客への提供が停止され、既存顧客は引き続き利用可能ですが、今後新機能が追加される予定はありません。AWSとしては**Amazon ECS Express Mode**への移行を推奨しています。
