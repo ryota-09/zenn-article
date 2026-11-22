@@ -96,41 +96,62 @@ App B は Lambda Web Adapter のサンプルを Web Functions 向けに移植し
 
 ```html-embed
 <style>
-.rt{--fg:#1f2937;--muted:#6b7280;--line:#d1d5db;--box:#f9fafb;--a1:#d97706;--a2:#2563eb;color:var(--fg);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:14px;line-height:1.4;padding:4px 0 32px}
-[data-theme="dark"] .rt{--fg:#e5e7eb;--muted:#9ca3af;--line:#4b5563;--box:#1f2937;--a1:#f59e0b;--a2:#60a5fa}
+.rt{--fg:#1f2937;--muted:#6b7280;--line:#9ca3af;--bd:#d1d5db;--box:#f9fafb;--a1:#d97706;--a2:#2563eb;color:var(--fg);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:14px;line-height:1.4;padding:4px 0 32px}
+[data-theme="dark"] .rt{--fg:#e5e7eb;--muted:#9ca3af;--line:#6b7280;--bd:#4b5563;--box:#1f2937;--a1:#f59e0b;--a2:#60a5fa}
 .rt *{box-sizing:border-box}
+.rt .box{border:1.5px solid var(--bd);border-radius:8px;padding:6px 8px;background:var(--box);text-align:center;font-weight:600;min-width:0}
+.rt .box small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.rt .cf{border-color:var(--a2)}
+.rt .wf{border-color:var(--a1);border-width:2px}
 .rt .g{display:grid;grid-template-columns:110px 1fr 150px;gap:8px 0;align-items:center}
 .rt .g>*{min-width:0}
-.rt .box{border:1.5px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--box);text-align:center;font-weight:600}
-.rt .box small{display:block;color:var(--muted);font-size:12px;font-weight:400}
 .rt .cl{grid-column:1;grid-row:1/5;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
 .rt .r{grid-column:2;display:flex;align-items:center}
 .rt .r1{grid-row:1}.rt .r2{grid-row:2}.rt .r3{grid-row:3}.rt .r4{grid-row:4}
 .rt .ln{flex:1;min-width:10px;border-top:1.5px solid var(--line)}
 .rt .hd{border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--line)}
 .rt .r .box{width:min(190px,62%)}
-.rt .cf{border-color:var(--a2)}
 .rt .o{grid-column:3;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
-.rt .wf{grid-row:1/4;border-color:var(--a1);border-width:2px}
+.rt .g .wf{grid-row:1/4}
 .rt .vc{grid-row:4}
-.rt .to{display:none}
+.rt .mob{display:none}
 @media (max-width:560px){
-.rt .g{grid-template-columns:1fr;gap:6px}
-.rt .cl,.rt .r,.rt .r1,.rt .r2,.rt .r3,.rt .r4{grid-column:1;grid-row:auto}
-.rt .ln,.rt .hd,.rt .o{display:none}
-.rt .r .box{width:100%}
-.rt .to{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+.rt .g{display:none}
+.rt .mob{display:block}
+.rt .two{display:grid;grid-template-columns:3fr 2fr;gap:8px}
+.rt .two>*{min-width:0}
+.rt .grp{display:flex;flex-direction:column;gap:6px;border:1.5px dashed var(--bd);border-radius:10px;padding:6px}
+.rt .mid{align-self:center}
+.rt .dn{display:flex;flex-direction:column;align-items:center;padding:2px 0}
+.rt .dn::before{content:"";height:12px;border-left:1.5px solid var(--line)}
+.rt .dn::after{content:"";border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--line)}
 }
 </style>
-<div class="rt"><div class="g">
+<div class="rt">
+<div class="g">
   <div class="box cl">計測地点<small>自宅</small><small>EC2（東京）</small></div>
-  <div class="r r1"><div class="ln"></div><div class="box">直接<small>HTTP/1.1</small><span class="to">→ Web Functions</span></div><div class="ln"></div><div class="hd"></div></div>
-  <div class="r r2"><div class="ln"></div><div class="box cf">CloudFront<small>キャッシュ無効・h2 / h3</small><span class="to">→ Web Functions</span></div><div class="ln"></div><div class="hd"></div></div>
-  <div class="r r3"><div class="ln"></div><div class="box cf">CloudFront<small>圧縮有効・h2 / h3</small><span class="to">→ Web Functions</span></div><div class="ln"></div><div class="hd"></div></div>
-  <div class="r r4"><div class="ln"></div><div class="box">Vercel のドメイン<small>h2</small><span class="to">→ Vercel</span></div><div class="ln"></div><div class="hd"></div></div>
+  <div class="r r1"><div class="ln"></div><div class="box">直接<small>HTTP/1.1</small></div><div class="ln"></div><div class="hd"></div></div>
+  <div class="r r2"><div class="ln"></div><div class="box cf">CloudFront<small>キャッシュ無効・h2 / h3</small></div><div class="ln"></div><div class="hd"></div></div>
+  <div class="r r3"><div class="ln"></div><div class="box cf">CloudFront<small>圧縮有効・h2 / h3</small></div><div class="ln"></div><div class="hd"></div></div>
+  <div class="r r4"><div class="ln"></div><div class="box">Vercel のドメイン<small>h2</small></div><div class="ln"></div><div class="hd"></div></div>
   <div class="box o wf">Lambda Web Functions<small>ap-northeast-1</small></div>
   <div class="box o vc">Vercel<small>hnd1</small></div>
-</div></div>
+</div>
+<div class="mob">
+  <div class="box">計測地点<small>自宅 / EC2（東京）</small></div>
+  <div class="two"><div class="dn"></div><div class="dn"></div></div>
+  <div class="two">
+    <div class="grp">
+      <div class="box">直接<small>HTTP/1.1</small></div>
+      <div class="box cf">CloudFront<small>キャッシュ無効</small><small>h2 / h3</small></div>
+      <div class="box cf">CloudFront<small>圧縮有効</small><small>h2 / h3</small></div>
+    </div>
+    <div class="box mid">Vercel の<br>ドメイン<small>h2</small></div>
+  </div>
+  <div class="two"><div class="dn"></div><div class="dn"></div></div>
+  <div class="two"><div class="box wf">Lambda Web Functions<small>ap-northeast-1</small></div><div class="box">Vercel<small>hnd1</small></div></div>
+</div>
+</div>
 ```
 
 Web Functions は ap-northeast-1 に、`nodejs24.x`（Arm64）でデプロイしました。CloudFront は2通り用意しています。1つはキャッシュポリシーに `CachingDisabled` を使ったもので、以下「キャッシュ無効の CloudFront」と呼びます。もう1つは TTL を 0/0/1 にし、gzip/br をキャッシュキーに含め、Compress を有効にしたもので、以下「圧縮有効の CloudFront」と呼びます。
