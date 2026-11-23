@@ -466,3 +466,15 @@ aws lambda-web update-web-function-endpoint --function-name <関数名> \
 - [AWS 上でサーバレスにストリーミング（microCMS）](https://zenn.dev/microcms/articles/aws-serverless-http-response-streaming)
 
 :::
+
+### エンジニア募集中です
+
+最後に宣伝させてください。私が関わっている株式会社canuuでは、エンジニアを募集しています！「現場から商流を変える」を掲げる、物流×システムのスタートアップです。正社員と業務委託のどちらの形でも募集しています。
+
+興味のある方は、X の DM か問い合わせフォームから気軽にご連絡ください。
+
+[![エンジニア募集中。株式会社canuuは物流×システムのスタートアップで、正社員と業務委託を募集しています](/images/nextjs-suspense-streaming-lambda-web-functions/recruit.jpg)](https://canuu.jp/contact)
+*画像をクリックすると、問い合わせフォームが開きます*
+
+- X の DM：[@Ryo54388667](https://x.com/Ryo54388667)
+- 問い合わせフォーム：[canuu.jp/contact](https://canuu.jp/contact)
